@@ -40,15 +40,15 @@ function tulinBotPayload(body) {
     "reqType": 0,
       "perception": {
           "inputText": {
-              
-              "text": body.message.text.replace("@chatbot", "")
+              // name of tulinbot
+              "text": body.message.text.replace("@xxxxxxxx", "")
           }
           
       },
       "userInfo": {
-       
-          "apiKey": "b9127614a0ff4e6c8357a0abc9b31a6e",
-          "userId": "582120"
+        // apikey and userId of tulinbot
+          "apiKey": "xxxxxxxxxxxxxxxxxxxxxxx",
+          "userId": "xxxxxxxxxxxx"
       }
   };
  
@@ -82,8 +82,8 @@ function PostTelegram(payload) {
     "payload": JSON.stringify(payload)
   };
  
- 
-  var response = UrlFetchApp.fetch("https://api.telegram.org/bot941038369:AAHo1_llprOXngBStyWY_f-g09Wyv75blxg/", data);
+  // your API token
+  var response = UrlFetchApp.fetch("https://api.telegram.org/bot(xxxxxxxxxxxxxxxxxxxxxx)/", data);
   var res = JSON.parse(response);
   return res;
 }
@@ -95,24 +95,18 @@ function checkIsMyMessage(body){
   }
  
   if (body.message.reply_to_message) {
-
-    if (body.message.reply_to_message.from.id == 941038369) {
+//ur tulinbot id
+    if (body.message.reply_to_message.from.id == xxxxxxxx) {
       return true;
     }
   }
  
-
- // if (body.message.reply_to_message) {
-  //  if (body.message.reply_to_message.from.username == "chatbot") {
-  //    return true;
-  //  }
- // }﻿
  
   if (text) {
     var paras = text.split(" ");
     if (paras[0] && paras[0].indexOf("@") >= 0){
-      
-      if  (paras[0].toLowerCase().indexOf("chatbot") >= 0){
+      // your tulinbot name
+      if  (paras[0].toLowerCase().indexOf("xxxxxxx") >= 0){
         return true;
       }
       return false;

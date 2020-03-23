@@ -1,0 +1,64 @@
+session_config:
+  session_expiration_time: 60.0
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- bot_function
+- order
+- check_out
+- order_beef
+- order_pork
+- order_chicken
+- order_salad
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  - text: Hello~ Master
+  - text: hi there!
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am bot Cat
+  utter_function:
+  - text: I can help u make order
+  utter_order_beef:
+  - text: Ok! One beef, got it.
+  utter_order_pork:
+  - text: Nice choice! Pork!
+  utter_order_salad:
+  - text: Great! Salad!
+  utter_checkout:
+  - text: Ok, thank you very much for coming!
+  utter_order_chicken:
+  - text: One chicken! Gotcha
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- upper_function
+- utter_order_beef
+- utter_order_pork
+- utter_order_salad
+- utter_checkout
+- utter_beef
+- utter_salad
+- utter_function
+- utter_chicken
+- utter_pork
+- utter_order_chicken
